@@ -2,67 +2,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900&amp;subset=latin-ext" rel="stylesheet">
-<style>
-    
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.calculator {
-    flex: 0 0 95%;
-}
-.screen {
-    width: 100%;
-    font-size: 7rem;
-    padding: 0.5rem;
-    background: rgb(41, 41, 56);
-    color: #fff;
-    border: none;
-}
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    transition: all 0.5s linear;
-}
-button {
-    flex: 0 0 25%;
-    border: 1px solid black;
-    padding: 0.25rem;
-    transition: all 2s ease;
-}
-button:hover{
-    background: blue;
-}
-.btn-yellow {
-    background: rgb(245, 146, 224);
-    color: #fff;
-}
-.btn-grey {
-    background: rgb(224, 224, 224);
-}
-.btn,.btn-equal,.btn-clear {
-    font-size: 4rem;
-}
-.btn-equal {
-    background: green;
-}
-.btn-clear {
-    background: red;
-}
-
-</style>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,400,600,900&amp;subset=latin-ext" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-
 <section class="calculator">
     <form>
         <input type="text" name="" id="" class="screen" />
@@ -91,32 +34,6 @@ button:hover{
     </div>
 </section>
 
-<script>
-const btns = document.querySelectorAll('.btn');
-const screen = document.querySelector('.screen');
-const equalBtn = document.querySelector('.btn-equal');
-const clearBtn = document.querySelector('.btn-clear');
-
-for(let i = 0; i < btns.length; i++){
-    btns[i].addEventListener('click', function(){
-        let number = btns[i].getAttribute('data-num');
-        screen.value += number;
-    });
-}
-
-equalBtn.addEventListener('click', function(){
-    if(screen.value === ''){
-        alert('input is empty');
-    }else{
-        let value = eval(screen.value);
-        screen.value = value;
-    }
-});
-
-clearBtn.addEventListener('click', function(){
-    screen.value = '';
-});
-
-</script>
+<script src="./script.js"></script>
 </body>
 </html>
